@@ -1,85 +1,60 @@
-/* Base rules for mobile.*/
-body {
-    margin:0;
-    padding:0;
-    width:100vw;
+/*I'm going all in on border box. So sue me!*/
+* {
+    box-sizing: border-box;
 }
 
-/* Containers are flex, go straight down.*/
+body {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+}
+
+/* Containers are, on mobile, a grid comprised of 100vw volumns. That's it.*/
 .container {
     display: flex;
     flex-direction: column;
 }
 
-p {
-    margin-right: auto;
+.left {
+    display: flex;
+    justify-content: left;
+    align-items: center;
 }
 
-/*Header information*/
+/* Start properties */
+/* On mobile, header should be 7vh tall with left-indented content.*/
 header {
     justify-content: center;
     background-color: #450084;
     color: white;
-    height:7vh;
-}
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    text-align: left;
-
-    margin:0;
-    padding-left: 5vw;
-    width: 95vw;
-}
-h1 {
-    font-size: 4vh;
-}
-h2, h3, h4, h5, h6 {
-    background-color: #CBB677;
-    padding-top: 1vh;
-    padding-bottom: 1vh;
+    height: 7vh;
+    width: 100%
 }
 
-/*Nav: On mobile, 2x2 grid with spaces between. */
+#start img {
+    width: 100vw;
+}
+
 nav ul {
-    margin-top: 2vh;
-    margin-bottom: 2vh;
-    padding: 0;
+    padding-left: 5vw;
+    padding-right: 5vw;
     list-style: none;
 
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
 }
-nav li {
-    display: flex;
-    justify-self: center;
-}
 
-/*Section: on mobile, usually paragraph, picture, button.*/
-.section {
-    align-items: center;
-    margin-bottom: 4vh;
-}
-.section img {
-    width: 90vw;
-    max-height: 35vh;
-    margin-top: 2vh;
-}
-p {
+/* Button properties.*/
+.button {
     margin-left: 5vw;
     margin-right: 5vw;
-}
 
-/*Links and navigation*/
-a {
-    text-decoration: none;
-    color: white;
-}
-/* Rounded purple buttons -- take up most of screen.*/
-.button {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-self: center;
     text-align: center;
 
     background-color: #450084;
@@ -93,85 +68,192 @@ a {
     height: 5vh;
 }
 
+/* Special rules for button in nav.*/
 nav .button {
-    width: 45vw;
-    margin: 1vw;
+    width: 42.5vw;
+    margin: 1vw 0vw 1vw 0vw;
 }
 
-/* Desktop rules.*/
-@media screen and (min-width: 400px) {
+/*Different color when hovered over.*/
+.button:hover {
+    background-color: #B599CE;
+}
+.button:active {
+    background-color: #DACCE6;
+}
+
+/* Some buttons should be right aligned.*/
+.right {
+    display:flex;
+    justify-content: right;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* H2 rules */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: left;
+    width: 100vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+h1 {
+    font-size: 4vh;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    margin-bottom: 2vh;
+    background-color: #CBB677;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+/*Paragraph rules*/
+p {
+    font-size: larger;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+/*Section rules*/
+.section {
+    padding-bottom: 4vh;
+}
+.section img {
+    padding-left: 5vw;
+    padding-right: 5vw;
+    max-width: 100vw;
+}
+
+/*START DESKTOP RULES*/
+@media screen and (min-width: 1250px) {
     #start {
         display: grid;
-        grid-template-areas:
-          "hd hd hd  nv nv nv nv nv"
-          "ig ig ig ig ig ig ig ig"
-          "ig ig ig ig ig ig ig ig"
-          "ig ig ig ig ig ig ig ig"
+        grid-template-columns: 60vw 40vw;
+        grid-template-rows: 7vh 50vh;
     }
 
     nav {
-        grid-area: nv;
-        height: 8vh;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        height: auto;
         width: auto;
     }
     header {
-        height: 8vh;
-        grid-area: hd;
+        grid-column: 1;
+        height: auto;
         width: auto;
     }
+    #start img {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+
+        width:100vw;
+        height: 50vh;
+        object-fit: cover;
+    }
+
     h1 {
         width: 100%;
-    }
-    /* Image will need to be cropped on desktop.*/
-    #start img {
-        grid-area: ig;
-        width: 100vw;
-        height: 60vh;
-        object-fit: cover;
-        object-position: 100% 50%;
     }
 
     nav ul {
         height: 100%;
         margin: 0;
+        padding: 0;
 
         display: flex;
         flex-direction: row;
         justify-content: right;
-        align-items: center;
+        align-items: right;
 
         background-color: #450084;
     }
+
     nav li {
         height: 100%;
     }
     /* On desktop, buttons are square and contained within header.*/
     nav .button {
-        width: 8vw;
+        width: 10vw;
         height: 100%;
         margin: 0;
+        font-family: sans-serif;
+        font-size: 2.5vh;
+    }
+
+    /*Indentation rules*/
+    p {
+        padding-left: 20vw;
+    }
+
+    h2 {
+        padding-left: 20vw;
+    }
+
+    .button {
+        margin-left: 20vw;
         border-radius: 0;
     }
 
-    /*Sections will also be grid in this scheme. */
+    .section img {
+        margin-right: 20vw;
+    }
+    
+    /*Content spacing*/
+    .content {
+        display: grid;
+        grid-template-columns: 50vw 50vw;
+        grid-template-rows: 40vh 40vh;
+    }
+    /*Section rules*/
     .section {
         display: grid;
-        grid-template-areas: 
-            "h h h"
-            "ct pc pc"
-            "bt pc pc"
+        grid-template-columns: 50vw 50vw;
+        grid-template-rows: 7vh 20vh 13vh;
+        height: 40vh;
     }
+
     .section h2 {
-        grid-area: "h";
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 1;
     }
+
     .section p {
-        grid-area: "ct";
+        grid-column: 1;
+        grid-row: 2;
     }
+
     .section .button {
-        grid-area: "bt";
+        width: 50%;
+        grid-column: 1;
+        grid-row: 3;
     }
+
     .section img {
-        grid-area: "pc";
+        max-width: 35vw;
+        height: 30vh; 
+        grid-column: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
     }
 }
-
