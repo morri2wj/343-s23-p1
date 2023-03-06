@@ -6,3 +6,52 @@ form {
 input {
     margin-bottom: 2vh;
 }
+
+.submit {
+    background-color: #450084;
+    color: white;
+    height: 5vh;
+    font-size: 2vh;
+}
+
+img {
+    margin-bottom: 2vh;
+}
+
+p {
+    margin-top: 0;
+}
+
+@media screen and (min-width: 1250px) {
+    #voluntold {
+        display: grid;
+        grid-template-columns: 50vw 50vw;
+        grid-template-rows: 7vh 50vh;
+    }
+
+    #voluntold h3 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row: 1;    
+    }
+
+    .artwrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+    }
+
+    .artwrapper img {
+        padding-left: 5vw;
+        padding-right: 5vw;
+        width: 40vw;
+        height: fit-content;
+    }
+
+    p {
+        padding-left: 5vw;
+        padding-right: 5vw;
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+    }
+}

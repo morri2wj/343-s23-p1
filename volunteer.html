@@ -2,9 +2,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Volunteer - JMuseum</title>
     <link rel="stylesheet" href="css/JMuseum.css">
     <link rel="stylesheet" href="css/volunteer.css">
+
+    <!--Favicon information-->
+    <!--See realfavicongenerator.net-->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
@@ -31,32 +41,37 @@
     </div>
     <div class="container" id="content">
         <h2>Volunteer</h2>
-        <div class="section container" id="why">
-            <h3>Why Volunteer?</h3>
-            <img src="images/volunteer.jpg" alt="Happy volunteers">
-            <div class="article">
-                <p>JMuseum's famous volunteer program has attracted attention across the state!</p>
-                <p>Here at JMuseum, volunteering means serving your community -- and helping yourself too!
-                </p>
-                <p>Teach the next generation of JMU students about their legacy, while also earning valuable experience
-                    for yourself and making memories that will last a lifetime!</p>
+        <div id="voluntold">
+            <div class="section container" id="why">
+                <h3>Why Volunteer?</h3>
+                <div class="artwrapper">
+                    <img src="images/volunteer.jpg" alt="Happy volunteers">
+                    <div class="article">
+                        <p>JMuseum's famous volunteer program has attracted attention across the state!</p>
+                        <p>Here at JMuseum, volunteering means serving your community -- and helping yourself too!
+                        </p>
+                        <p>Teach the next generation of JMU students about their legacy, while also earning valuable
+                            experience
+                            for yourself and making memories that will last a lifetime.</p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="section container" id="how">
-            <h3>Sign Up Today!</h3>
-            <p>Considering volunteering? We'd be glad to have you!
-                Please fill out this survey and we'll get to you as soon as possible!
-                Thank you!
-            </p>
-            <form class="container" method="POST">
-                <label>Name:</label>
-                <input name="name" type="text">
-                <label>Email:</label>
-                <input name="email" type="email">
-                <label>Start Date:</label>
-                <input name="date" type="date">
-                <input name="submit" type="submit">
-            </form>
+            <div class="section container" id="how">
+                <h3>Sign Up Today!</h3>
+                <p>Considering volunteering? We'd be glad to have you!
+                    Please fill out this survey and we'll get to you as soon as possible!
+                    Thank you!
+                </p>
+                <form class="container" method="POST">
+                    <label>Name:</label>
+                    <input name="name" type="text">
+                    <label>Email:</label>
+                    <input name="email" type="email">
+                    <label>Start Date:</label>
+                    <input name="date" type="date">
+                    <input class="submit" name="submit" type="submit" value="Submit">
+                </form>
+            </div>
         </div>
     </div>
 </body>
