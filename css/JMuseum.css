@@ -16,23 +16,21 @@ body {
     flex-direction: column;
 }
 
-.left {
+/* Start properties */
+/* On mobile, header should be 7vh tall with left-indented content.*/
+header {
+    background-color: #450084;
+    color: white;
+    height: 7vh;
+    width: auto;
+    
     display: flex;
     justify-content: left;
     align-items: center;
 }
 
-/* Start properties */
-/* On mobile, header should be 7vh tall with left-indented content.*/
-header {
-    justify-content: center;
-    background-color: #450084;
-    color: white;
-    height: 7vh;
-    width: auto;
-}
-
 #start img {
+    margin: 0;
     width: 100vw;
 }
 
@@ -93,7 +91,7 @@ a {
     color: white;
 }
 
-/* H2 rules */
+/* H? rules */
 h1,
 h2,
 h3,
@@ -112,16 +110,21 @@ h1 {
     font-size: 4vh;
 }
 
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin-top: 0;
-    margin-bottom: 2vh;
+h2, h3 {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+h2 {
+    background-color: #AD9C65;
+    height: 5vh;
+}
+
+h3 {
     background-color: #CBB677;
-    padding-top: 1vh;
-    padding-bottom: 1vh;
+    height: 4vh;
+    margin-bottom: 3vh;
 }
 
 /*Paragraph rules*/
@@ -141,17 +144,27 @@ p {
     max-width: 100vw;
 }
 
+/*Captions*/
+.caption {
+    text-align: center;
+    font-size: small;
+    font-style: italic;
+}
+
 /*START DESKTOP RULES*/
 @media screen and (min-width: 1250px) {
     #start {
         display: grid;
         grid-template-columns: 60vw 40vw;
-        grid-template-rows: 7vh 50vh;
+        grid-template-rows: 7vh;
+    }
+    
+    h1 {
+        width: 100%;
     }
 
     nav {
-        grid-column-start: 2;
-        grid-column-end: 3;
+        grid-column:2;
         height: auto;
         width: auto;
     }
@@ -159,20 +172,6 @@ p {
         grid-column: 1;
         height: auto;
         width: auto;
-    }
-    #start img {
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row-start: 2;
-        grid-row-end: 3;
-
-        width:100vw;
-        height: 50vh;
-        object-fit: cover;
-    }
-
-    h1 {
-        width: 100%;
     }
 
     nav ul {
@@ -206,70 +205,32 @@ p {
         padding-right: 0;
     }
     img {
+        /*Switch top margins to vh*/
         padding-right: 0;
     }
 
     .button {
         border-radius: 0;
     }
-    
-    /*Content spacing*/
-    #content {
-        display: grid;
-        grid-template-columns: 50vw 50vw;
-        grid-template-rows: 40vh 40vh;
-    }
 
-    #about {
-        grid-column: 1;
-        grid-row: 1;
-    }
-    #exhibits {
-        grid-column: 2;
-        grid-row: 1;
-    }
-    #volunteer {
+    /*Rules for section content*/
+    .section .article {
         grid-column: 1;
         grid-row: 2;
+        overflow: scroll;
     }
-    #hours {
+
+    .section .captioned {
         grid-column: 2;
         grid-row: 2;
-    }
-
-    /*Section rules*/
-    .section {
-        display: grid;
-        grid-template-columns: 25vw 25vw;
-        grid-template-rows: 7vh 13vh 12vh;
-        height: 32vh;
-    }
-
-    .section h2 {
-        width: 100%;
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row: 1;
-    }
-
-    .section p {
-        grid-column: 1;
-        grid-row: 2;
-    }
-
-    .section .button {
-        width: 50%;
-        grid-column: 1;
-        grid-row: 3;
-        align-self: end;
+        max-width: 30vw;
     }
 
     .section img {
         padding-left: 0;
         width: 25vw;
-        height: 25vh; 
+        height: 25vh;
         grid-column: 2;
-        grid-row-start: 2;
-        grid-row-end: 3;
+        grid-row: 2;
     }
 }

@@ -1,0 +1,69 @@
+/*Rules specifically for the home page. */
+h2 {
+    margin-bottom: 3vh;
+}
+
+@media screen and (min-width: 1250px) {
+    #start img {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row:2;
+
+        width:100vw;
+        height: 50vh;
+        object-fit: cover;
+    }
+    
+    #content {
+        display: grid;
+        grid-template-columns: 50vw 50vw;
+        grid-template-rows: 40vh 40vh;
+    }
+
+    #about {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    #exhibits {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    #volunteer {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    #hours {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    /*Section rules*/
+    .section {
+        display: grid;
+        grid-template-columns: 25vw 25vw;
+        grid-template-rows: 7vh 13vh 12vh;
+        height: 32vh;
+    }
+
+    .section h2 {
+        width: 100%;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row: 1;
+    }
+
+    .section p {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .section .button {
+        width: 50%;
+        grid-column: 1;
+        grid-row: 3;
+        align-self: end;
+    }
+}
