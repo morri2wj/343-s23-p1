@@ -3,7 +3,7 @@ p {
     margin-bottom: 2vh;
 }
 
-
+/* Desktop layout media query*/
 @media screen and (min-width: 1250px) {
     .section {
         display: grid;

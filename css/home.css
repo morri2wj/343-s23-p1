@@ -3,6 +3,7 @@ h2 {
     margin-bottom: 3vh;
 }
 
+/* Desktop layout media query*/
 @media screen and (min-width: 1250px) {
     #start img {
         grid-column-start: 1;

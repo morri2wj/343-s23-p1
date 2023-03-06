@@ -6,6 +6,7 @@ h3 {
     margin-bottom: 3vh;
 }
 
+/* Desktop layout media query*/
 @media screen and (min-width: 1250px) {
     #start {
         display: grid;
